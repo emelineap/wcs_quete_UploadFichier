@@ -1,0 +1,17 @@
+{
+    "name": "emeline/UploadFichier",
+    "require": {
+        "twig/twig": "^2.4"
+    },
+    "authors": [
+        {
+            "name": "Emeline Ancel-Pirouelle",
+            "email": "contact@emelineancelpirouelle.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "UploadFichier\\": "src/"
+        }
+    }
+}
