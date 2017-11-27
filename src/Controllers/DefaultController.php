@@ -79,7 +79,7 @@ class DefaultController extends Controller
                     if ($file_error === 0) {
 
                         // on vérifie la taille du fichier, qui doit être inférieure à 1Mo
-                        if ($file_size <= 1000000) {
+                        if ($file_size <= 1048576) {
 
                             // on génère un nouveau nom unique pour le fichier uploadé
                             $file_name_new = 'image' . uniqid('', true) . '.' . $file_ext;
@@ -128,11 +128,14 @@ class DefaultController extends Controller
 
             echo 'yo';
         }
+        
 
-        // si tout est ok, on renvoie vers la page de succès
+        $dirname = "../uploads/";
+        $image = glob($dirname . "*.{jpg,gif,png}", GLOB_BRACE);
         return $this->twig->render('success.html.twig', array(
-            "files" => $uploaded
+            "files" => $image,
         ));
+
     }
 
 }
